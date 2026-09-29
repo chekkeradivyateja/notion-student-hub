@@ -11,7 +11,11 @@ export type ArticleMeta = {
   description: string;
   keywords: string[];
   date: string;
-  product?: string; // which product's CTA this article funnels to
+  product?: string; // which registered product's CTA this article funnels to
+  // Self-contained CTA (used by pipeline-generated articles): overrides `product`.
+  productName?: string;
+  productUrl?: string;
+  productPrice?: string;
 };
 export type Article = ArticleMeta & { html: string };
 
@@ -33,6 +37,9 @@ export function getArticle(slug: string): Article {
     keywords: Array.isArray(data.keywords) ? data.keywords : [],
     date: String(data.date ?? ""),
     product: data.product ? String(data.product) : undefined,
+    productName: data.product_name ? String(data.product_name) : undefined,
+    productUrl: data.product_url ? String(data.product_url) : undefined,
+    productPrice: data.product_price ? String(data.product_price) : undefined,
     html,
   };
 }
