@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { site, getProduct } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,8 +22,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="container">{children}</main>
         <footer className="site-footer">
           <p>
-            {site.name} — free Notion guides for students.{" "}
-            <a href={site.product.url}>{site.product.name}</a>
+            {site.name} — free guides for students.{" "}
+            <a href={getProduct().url}>{getProduct().name}</a>
           </p>
         </footer>
       </body>

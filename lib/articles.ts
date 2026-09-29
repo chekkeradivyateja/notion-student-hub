@@ -11,6 +11,7 @@ export type ArticleMeta = {
   description: string;
   keywords: string[];
   date: string;
+  product?: string; // which product's CTA this article funnels to
 };
 export type Article = ArticleMeta & { html: string };
 
@@ -31,6 +32,7 @@ export function getArticle(slug: string): Article {
     description: String(data.description ?? ""),
     keywords: Array.isArray(data.keywords) ? data.keywords : [],
     date: String(data.date ?? ""),
+    product: data.product ? String(data.product) : undefined,
     html,
   };
 }

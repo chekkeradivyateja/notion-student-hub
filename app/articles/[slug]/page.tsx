@@ -34,7 +34,7 @@ export default async function ArticlePage({
     <article className="prose">
       <h1>{a.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: a.html }} />
-      <Cta campaign={slug} />
+      <Cta campaign={slug} product={a.product} />
     </article>
   );
 }

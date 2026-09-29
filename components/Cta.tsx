@@ -1,18 +1,18 @@
-import { site, productUrl } from "@/lib/site";
+import { getProduct, productUrl } from "@/lib/site";
 
 // Funnel card shown on every article — the article gives the how-to for free,
-// this offers the done-for-you template.
-export default function Cta({ campaign }: { campaign: string }) {
+// this offers the matching done-for-you product (chosen per-article).
+export default function Cta({ campaign, product }: { campaign: string; product?: string }) {
+  const p = getProduct(product);
   return (
     <aside className="cta">
       <p className="cta-kicker">Skip the setup</p>
-      <h3 className="cta-title">{site.product.name}</h3>
+      <h3 className="cta-title">{p.name}</h3>
       <p className="cta-desc">
-        {site.product.tagline}. Duplicate it into Notion in minutes instead of
-        building from scratch.
+        {p.tagline}. Get it done in minutes instead of building from scratch.
       </p>
-      <a className="cta-btn" href={productUrl(campaign)}>
-        Get it for {site.product.price} →
+      <a className="cta-btn" href={productUrl(p, campaign)}>
+        Get it for {p.price} →
       </a>
     </aside>
   );

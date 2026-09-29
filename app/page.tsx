@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllMeta } from "@/lib/articles";
-import { site, productUrl } from "@/lib/site";
+import { site, products, productUrl } from "@/lib/site";
 
 export default function Home() {
   const articles = getAllMeta();
@@ -9,9 +9,13 @@ export default function Home() {
       <section className="hero">
         <h1>{site.name}</h1>
         <p>{site.tagline}</p>
-        <a className="cta-btn" href={productUrl("home")}>
-          Get {site.product.name} — {site.product.price} →
-        </a>
+        <div className="hero-products">
+          {Object.values(products).map((p) => (
+            <a key={p.id} className="cta-btn" href={productUrl(p, "home")}>
+              {p.name} — {p.price} →
+            </a>
+          ))}
+        </div>
       </section>
 
       <section>
