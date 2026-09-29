@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: { default: `${site.name} — Notion for Students`, template: `%s — ${site.name}` },
   description: site.tagline,
   openGraph: { title: site.name, description: site.tagline, url: site.url, type: "website" },
+  verification: { google: "zJMpsLKLXAJ39o1_pKxRbIXwJDjSy51EBb36NfYsc7U" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
