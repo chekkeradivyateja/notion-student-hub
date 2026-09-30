@@ -25,6 +25,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {site.name} — free guides for students.{" "}
             <a href={getProduct().url}>{getProduct().name}</a>
           </p>
+          <p className="footer-legal">
+            <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> ·{" "}
+            <a href="/disclaimer/">Disclaimer</a>
+          </p>
         </footer>
       </body>
     </html>

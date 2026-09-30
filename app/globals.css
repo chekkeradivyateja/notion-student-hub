@@ -22,7 +22,10 @@ a { color: var(--accent); }
 .brand { font-weight: 700; font-size: 20px; text-decoration: none; color: var(--fg); }
 .brand-tag { color: var(--muted); font-size: 14px; }
 .site-footer { border-top: 1px solid var(--border); margin-top: 48px; }
-.site-footer p { max-width: 760px; margin: 0 auto; padding: 24px 20px; color: var(--muted); font-size: 14px; }
+.site-footer p { max-width: 760px; margin: 0 auto; padding: 8px 20px; color: var(--muted); font-size: 14px; }
+.site-footer p:first-child { padding-top: 24px; }
+.site-footer p:last-child { padding-bottom: 24px; }
+.footer-legal a { color: var(--muted); }
 
 .hero { padding: 24px 0 8px; }
 .hero h1 { font-size: 34px; line-height: 1.2; margin: 0 0 8px; }
